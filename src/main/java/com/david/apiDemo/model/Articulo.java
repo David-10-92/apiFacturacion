@@ -7,6 +7,15 @@ public class Articulo {
     private double precio;
     private boolean descuento;
 
+    public Articulo() {
+    }
+
+    public Articulo(int id, String descripcion, double precio) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.precio = precio;
+    }
+
     public int getId() {
         return id;
     }
