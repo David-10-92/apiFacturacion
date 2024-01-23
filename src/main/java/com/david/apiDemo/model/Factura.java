@@ -1,16 +1,9 @@
 package com.david.apiDemo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 import java.util.Collection;
 
-@Entity
-@Table (name = "facturas")
 public class Factura {
 
-    @Id
     private int id;
     private Cliente cliente;
     private Collection<Articulo> articulos;
