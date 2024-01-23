@@ -1,19 +1,19 @@
 package com.david.apiDemo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name = "ARTICULOS")
 public class Articulo {
 
+    @Id
     private int id;
     private String descripcion;
     private double precio;
-    private boolean descuento;
 
     public Articulo() {
-    }
-
-    public Articulo(int id, String descripcion, double precio) {
-        this.id = id;
-        this.descripcion = descripcion;
-        this.precio = precio;
     }
 
     public int getId() {
@@ -40,11 +40,4 @@ public class Articulo {
         this.precio = precio;
     }
 
-    public boolean isDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(boolean descuento) {
-        this.descuento = descuento;
-    }
 }
