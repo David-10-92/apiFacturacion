@@ -1,10 +1,10 @@
-package com.david.apiDemo.service;
+package com.david.apiDemo.repository;
 
 import com.david.apiDemo.model.Articulo;
 
 import java.util.Collection;
 
-public interface ArticuloService {
+public interface ArticuloDAO {
 
     Collection<Articulo> findArticulos();
 }

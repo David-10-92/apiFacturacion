@@ -1,6 +1,8 @@
 package com.david.apiDemo.service;
 
 import com.david.apiDemo.model.Articulo;
+import com.david.apiDemo.repository.ArticuloDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,12 +12,15 @@ import java.util.List;
 @Service
 public class ArticuloServiceImpl implements ArticuloService{
 
+    private final ArticuloDAO articulo;
+
+    @Autowired
+    public ArticuloServiceImpl(ArticuloDAO articulo) {
+        this.articulo = articulo;
+    }
+
     @Override
     public Collection<Articulo> findArticulos() {
-        List<Articulo> nuevosArticulos = new ArrayList<>();
-        nuevosArticulos.add(new Articulo(1,"Boligrafo",2.80));
-        nuevosArticulos.add( new Articulo(1,"Lapiz",1.80));
-        nuevosArticulos.add( new Articulo(1,"Goma",0.80));
-        return nuevosArticulos;
+        return articulo.findArticulos();
     }
 }
