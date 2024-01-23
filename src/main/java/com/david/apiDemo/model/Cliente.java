@@ -1,8 +1,13 @@
 package com.david.apiDemo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name = "clientes")
 public class Cliente {
-
-
+    @Id
     private int id;
     private String nombre;
     private String apellido;
