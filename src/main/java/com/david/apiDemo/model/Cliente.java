@@ -1,19 +1,22 @@
 package com.david.apiDemo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table (name = "clientes")
 public class Cliente {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private String apellido;
     private String email;
     private String direccion;
     private int telefono;
+    @OneToMany
+    private List<Factura> faturas;
 
     public Cliente() {
     }

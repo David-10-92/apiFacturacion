@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-@Configuration
+/*@Configuration
 public class Config {
 
     @Autowired
@@ -23,4 +23,4 @@ public class Config {
         dataSource.setPassword(env.getProperty("password"));
         return dataSource;
     }
-}
+}*/

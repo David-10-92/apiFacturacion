@@ -1,8 +1,6 @@
 package com.david.apiDemo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 
@@ -11,9 +9,15 @@ import java.util.Collection;
 public class Factura {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @OneToOne
     private Cliente cliente;
+    @OneToMany
     private Collection<Articulo> articulos;
+
+    public Factura() {
+    }
 
     public int getId() {
         return id;

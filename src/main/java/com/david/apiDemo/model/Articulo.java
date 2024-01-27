@@ -1,17 +1,18 @@
 package com.david.apiDemo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.ValueGenerationType;
 
 @Entity
 @Table (name = "articulos")
 public class Articulo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String descripcion;
     private double precio;
+    private int cantidad;
 
     public Articulo() {
     }
@@ -40,4 +41,11 @@ public class Articulo {
         this.precio = precio;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }
